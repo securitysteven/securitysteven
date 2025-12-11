@@ -11,7 +11,7 @@
 
 - 🧑‍💻 Pen-testing, secure coding, cloud automation  
 - 🔐 Always hunting for CVEs & bugs  
-- 🌱 Currently learning: Rust, Go, Red Teaming tools, Machine Learning
+- 🌱 Currently learning: Go, Machine Learning, Data analytics
 
 ---
 
