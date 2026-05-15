@@ -1,8 +1,8 @@
-<h1 align="center">Hi there 👋, I'm Steven</h1>
-<h3 align="center">Cybersecurity enthusiast | Automation junkie | OSS contributor</h3>
+<h1>Hi there 👋, I'm Steven</h1>
+<h3>Cybersecurity enthusiast | Automation junkie | OSS contributor</h3>
 
-<p align="center">
-  <img src="github-metrics.svg" alt="GitHub metrics" />
+<p>
+  <img src="assets/metrics.svg" alt="GitHub metrics" />
 </p>
 
 ---
