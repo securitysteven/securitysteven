@@ -1,20 +1,17 @@
-name: 'profile-metrics-card'
-description: 'Generate a single SVG metrics card for profile README'
-author: '@securitysteven'
+name: 'Generate Profile Metrics'
+description: 'Generate GitHub profile metrics SVG'
+author: 'securitysteven'
 inputs:
-  github_token:
-    description: 'GitHub token (GITHUB_TOKEN)'
+  github-token:
+    description: 'GitHub token for API access'
     required: true
-  output_path:
-    description: 'Path to write SVG'
-    required: true
+  output-path:
+    description: 'Path where metrics SVG will be saved'
+    required: false
     default: 'assets/metrics.svg'
   username:
-    description: 'GitHub username'
+    description: 'GitHub username to generate metrics for'
     required: true
 runs:
-  using: 'node24'
+  using: 'node20'
   main: 'src/index.js'
-branding:
-  icon: 'graph'
-  color: 'blue'
