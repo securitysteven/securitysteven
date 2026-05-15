@@ -7,7 +7,6 @@ const token = process.env.INPUT_GITHUB_TOKEN;
 const outputPath = process.env.INPUT_OUTPUT_PATH;
 const username = process.env.INPUT_USERNAME || process.env.GITHUB_ACTOR;
 
-if (!token) throw new Error('GITHUB_TOKEN required');
 if (!outputPath) throw new Error('output-path required');
 if (!username) throw new Error('username required');
 

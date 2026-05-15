@@ -2,9 +2,6 @@ name: 'Generate Profile Metrics'
 description: 'Generate GitHub profile metrics SVG'
 author: 'securitysteven'
 inputs:
-  github-token:
-    description: 'GitHub token for API access'
-    required: true
   output-path:
     description: 'Path where metrics SVG will be saved'
     required: false
