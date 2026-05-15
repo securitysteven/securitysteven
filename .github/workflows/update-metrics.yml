@@ -10,23 +10,41 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v6
-      
-      - name: Install dependencies
-        run: npm install
 
-      - name: Generate metrics
-        run: node index.js
+      - name: Fetch GitHub stats
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const username = '${{ github.repository_owner }}';
+            const { data: user } = await github.rest.users.getByUsername({ username });
+            const { data: repos } = await github.rest.repos.listForUser({ username, per_page: 100 });
+            const totalStars = repos.reduce((s, r) => s + r.stargazers_count, 0);
+            const topRepos = repos.filter(r => !r.fork).sort((a,b)=>b.stargazers_count-a.stargazers_count).slice(0,3).map(r=>({ name: r.name, stars: r.stargazers_count }));
+            const stats = {
+              name: user.name || user.login,
+              avatar: user.avatar_url,
+              public_repos: user.public_repos,
+              followers: user.followers,
+              totalStars,
+              topRepos
+            };
+            const fs = require('fs');
+            fs.writeFileSync('stats.json', JSON.stringify(stats), 'utf8');
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps (if needed)
+        run: npm ci
+
+      - name: Generate metrics SVG
+        run: node src/index.js
         env:
-          INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          INPUT_OUTPUT_PATH: 'assets/metrics.svg'
-          INPUT_USERNAME: ${{ github.repository_owner }}
-
-      - name: Commit and Push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/metrics.svg
-          git commit -m "chore: update profile metrics [skip ci]" || exit 0
-          git push
+          STATS_FILE: stats.json
