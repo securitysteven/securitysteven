@@ -1,4 +1,4 @@
-function simpleCard({ name, avatar, public_repos, followers, totalStars, topRepos }) {
+export function simpleCard({ name, avatar, public_repos, followers, totalStars, topRepos }) {
   const reposHtml = topRepos.map((r, i) => `
     <g transform="translate(0, ${i * 20})">
       <text class="stat" x="0" y="0">${r.name}</text>
@@ -58,4 +58,3 @@ function simpleCard({ name, avatar, public_repos, followers, totalStars, topRepo
 </svg>`;
 }
 
-module.exports = { simpleCard };

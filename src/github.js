@@ -1,10 +1,10 @@
-const { Octokit } = require('@octokit/rest');
+import { Octokit } from '@octokit/rest';
 
-function getClient(token) {
+export function getClient(token) {
   return new Octokit({ auth: token });
 }
 
-async function fetchBasicStats(octokit, username) {
+export async function fetchBasicStats(octokit, username) {
   const { data: user } = await octokit.users.getByUsername({ username });
   const { data: repos } = await octokit.repos.listForUser({ username, per_page: 100 });
   const totalStars = repos.reduce((s, r) => s + r.stargazers_count, 0);
@@ -24,4 +24,3 @@ async function fetchBasicStats(octokit, username) {
   };
 }
 
-module.exports = { getClient, fetchBasicStats };

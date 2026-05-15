@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { getClient, fetchBasicStats } = require('./github');
-const { simpleCard } = require('./svg-templates');
+import fs from 'fs';
+import path from 'path';
+import { getClient, fetchBasicStats } from './github.js';
+import { simpleCard } from './svg-templates.js';
 
 async function run() {
   try {
@@ -28,5 +28,5 @@ async function run() {
   }
 }
 
-if (require.main === module) run();
-module.exports = run;
+if (import.meta.url === `file://${process.argv[1]}`) run();
+export default run;
