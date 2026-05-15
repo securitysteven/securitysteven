@@ -1,16 +1,28 @@
+// index.js (robust minimal)
 import { mkdir, writeFile } from 'fs/promises';
 import path from 'path';
 import { getClient, fetchBasicStats } from './github.js';
 import { simpleCard } from './svg-templates.js';
 
-const token = process.env.GITHUB_TOKEN || process.env.INPUT_GITHUB_TOKEN;
-const outputPath = process.env.INPUT_OUTPUT_PATH || 'assets/metrics.svg';
-const username = process.env.INPUT_USERNAME || process.env.GITHUB_ACTOR;
+const token =
+  process.env.GITHUB_TOKEN ||
+  process.env.INPUT_GITHUB_TOKEN ||
+  process.env['INPUT_GITHUB-TOKEN'];
+
+const outputPath =
+  process.env.INPUT_OUTPUT_PATH ||
+  process.env['INPUT_OUTPUT-PATH'] ||
+  'assets/metrics.svg';
+
+const username =
+  process.env.INPUT_USERNAME ||
+  process.env['INPUT-USERNAME'] ||
+  process.env.GITHUB_ACTOR;
 
 if (!token) throw new Error('GITHUB_TOKEN required');
 if (!username) throw new Error('username required');
 
-async function run(){
+export default async function run() {
   const octokit = getClient(token);
   const stats = await fetchBasicStats(octokit, username);
   const svg = simpleCard(stats);
