@@ -15,4 +15,4 @@
 
 ---
 
-> 🚧 **Metrics auto-update every 6 hours**. Generated with 💖 by [lowlighter/metrics](https://github.com/lowlighter/metrics)
+> 🚧 **Metrics auto-update every day**.
