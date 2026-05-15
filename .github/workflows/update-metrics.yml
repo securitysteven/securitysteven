@@ -17,7 +17,7 @@ jobs:
         run: npm install
 
       - name: Generate metrics
-        uses: securitysteven/metrics@latest
+        uses: ./.github/actions/metrics
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           output-path: 'assets/metrics.svg'
