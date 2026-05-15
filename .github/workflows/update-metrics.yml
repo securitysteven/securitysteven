@@ -46,3 +46,11 @@ jobs:
         run: node svg-generator.js
         env:
           STATS_FILE: stats.json
+
+      - name: Commit and push metrics
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add assets/metrics.svg
+          git commit -m "Update metrics.svg"
+          git push
