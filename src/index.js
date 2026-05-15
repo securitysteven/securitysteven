@@ -5,9 +5,9 @@ import { simpleCard } from './svg-templates.js';
 
 async function run() {
   try {
-    const token = process.env.INPUT_GITHUB_TOKEN || process.env.GITHUB_TOKEN;
-    const outputPath = process.env.INPUT_OUTPUT_PATH || 'assets/metrics.svg';
-    const username = process.env.INPUT_USERNAME || process.env.GITHUB_ACTOR;
+    const token = process.env.INPUT_GITHUB_TOKEN || process.env.GITHUB_TOKEN || process.env['INPUT_GITHUB-TOKEN'];
+    const outputPath = process.env.INPUT_OUTPUT_PATH || process.env['INPUT_OUTPUT-PATH'] || 'assets/metrics.svg';
+    const username = process.env.INPUT_USERNAME || process.env['INPUT_USERNAME'] || process.env.GITHUB_ACTOR;
 
     if (!token) throw new Error('GITHUB_TOKEN required');
 
