@@ -19,8 +19,8 @@ jobs:
       - name: Generate metrics
         uses: securitysteven/metrics@latest
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          output_path: 'assets/metrics.svg'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          output-path: 'assets/metrics.svg'
           username: ${{ github.repository_owner }}
 
       - name: Commit and Push
