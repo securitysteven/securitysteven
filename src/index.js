@@ -19,10 +19,7 @@ const username =
   process.env['INPUT-USERNAME'] ||
   process.env.GITHUB_ACTOR;
 
-if (!token) throw new Error('GITHUB_TOKEN required');
-if (!username) throw new Error('username required');
-
-export default async function run() {
+async function run() {
   const octokit = getClient(token);
   const stats = await fetchBasicStats(octokit, username);
   const svg = simpleCard(stats);
