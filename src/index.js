@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const core = require('@actions/core'); // optional for local testing
 const { getClient, fetchBasicStats } = require('./github');
 const { simpleCard } = require('./svg-templates');
 
