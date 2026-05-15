@@ -9,8 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run metrics generator
-        uses: securitysteven/securitysteven@main
+        name: Run metrics generator
         with:
           github-token: ${{ secrets.METRICS_TOKEN }}
           output-path: 'assets/metrics.svg'
