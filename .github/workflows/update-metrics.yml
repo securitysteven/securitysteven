@@ -43,6 +43,6 @@ jobs:
           node-version: '20'
 
       - name: Generate metrics SVG
-        run: node index.js
+        run: node assets/template.js
         env:
           STATS_FILE: stats.json

@@ -2,7 +2,7 @@
   "name": "profile-metrics-card",
   "version": "0.1.0",
   "type": "module",
-  "main": "index.js",
+  "main": "assets/template.js",
   "license": "MIT",
   "dependencies": {
     "@octokit/rest": "^22.0.1"
