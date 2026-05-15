@@ -18,10 +18,10 @@ jobs:
 
       - name: Generate metrics
         uses: ./.github/actions/metrics
-        env:
-          INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          INPUT_OUTPUT_PATH: 'assets/metrics.svg'
-          INPUT_USERNAME: ${{ github.repository_owner }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          output-path: 'assets/metrics.svg'
+          username: ${{ github.repository_owner }}
 
       - name: Commit and Push
         run: |
