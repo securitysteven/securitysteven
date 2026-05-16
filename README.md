@@ -9,9 +9,9 @@
 
 ### 🛠 About Me
 
-- 🧑‍💻 Pen-testing, secure coding, cloud automation  
+- 🧑‍💻 Pen-testing, secure coding, autonomous automation
 - 🔐 Always hunting for CVEs & bugs  
-- 🌱 Currently learning: Go, Machine Learning, Data analytics
+- 🌱 Currently learning: AI assistant/agentics, ML operations and infrastructure
 
 ---
 
