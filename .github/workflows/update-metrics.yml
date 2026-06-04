@@ -54,3 +54,4 @@ jobs:
           git add assets/metrics.svg
           git commit -m "Update metrics.svg"
           git push
+          return 0
