@@ -8,6 +8,17 @@ const escapeXml = (value) => String(value ?? '')
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&apos;');
 
+function inlineSvg(source, { x, y, width, height }) {
+  const match = source.match(/<svg\b([^>]*)>([\s\S]*?)<\/svg>\s*$/i);
+  if (!match) throw new Error('assets/profile-header.svg does not contain a valid SVG root element');
+
+  const [, attributes, contents] = match;
+  const viewBox = attributes.match(/\bviewBox\s*=\s*(["'])(.*?)\1/i)?.[2];
+  if (!viewBox) throw new Error('assets/profile-header.svg is missing a viewBox attribute');
+
+  return `<svg x="${x}" y="${y}" width="${width}" height="${height}" viewBox="${escapeXml(viewBox)}" preserveAspectRatio="xMidYMid meet">${contents}</svg>`;
+}
+
 function wrapRepositories(repositories, maxWidth = 475) {
   const lines = [];
   let line = [];
@@ -32,10 +43,10 @@ function wrapRepositories(repositories, maxWidth = 475) {
   return lines;
 }
 
-function profileSvg({ name, username, public_repos, followers, totalStars, sections = [] }) {
+function profileSvg({ name, username, public_repos, followers, totalStars, sections = [], headerSvg }) {
   const safeName = escapeXml(name || 'GitHub user');
   const safeUsername = String(username || 'securitysteven');
-  const headerUrl = `https://raw.githubusercontent.com/${encodeURIComponent(safeUsername)}/${encodeURIComponent(safeUsername)}/main/assets/profile-header.svg`;
+  const header = inlineSvg(headerSvg, { x: 40, y: 30, width: 680, height: 170 });
 
   const stats = [
     { label: 'PUBLIC REPOSITORIES', value: public_repos },
@@ -45,14 +56,14 @@ function profileSvg({ name, username, public_repos, followers, totalStars, secti
   const statCards = stats.map(({ label, value }, index) => {
     const x = 36 + index * 231;
     return `
-      <g transform="translate(${x} 393)">
+      <g transform="translate(${x} 413)">
         <rect width="216" height="72" rx="14" fill="#111a2e" stroke="#26324b" />
         <text class="label" x="16" y="28">${label}</text>
         <text class="value" x="16" y="57">${escapeXml(value ?? 0)}</text>
       </g>`;
   }).join('');
 
-  let rowY = 546;
+  let rowY = 566;
   const tableRows = sections.map(({ name: sectionName, repositories = [] }, index) => {
     const lines = wrapRepositories(repositories);
     const rowHeight = Math.max(36, 14 + lines.length * 15);
@@ -81,7 +92,7 @@ function profileSvg({ name, username, public_repos, followers, totalStars, secti
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="${height}" viewBox="0 0 760 ${height}" fill="none" role="img" aria-labelledby="title description">
   <title id="title">${safeName} — cybersecurity, automation, and open source</title>
-  <desc id="description">Profile header, interests, GitHub statistics, and a table of public repositories grouped by section for ${safeName}.</desc>
+  <desc id="description">Profile introduction, interests, GitHub statistics, and a table of public repositories grouped by section for ${safeName}.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="760" y2="${height}" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0c1222" />
@@ -89,26 +100,27 @@ function profileSvg({ name, username, public_repos, followers, totalStars, secti
     </linearGradient>
   </defs>
   <rect x="0.5" y="0.5" width="759" height="${height - 1}" rx="22" fill="url(#background)" stroke="#29334a" />
-  <image href="${escapeXml(headerUrl)}" x="40" y="30" width="680" height="170" preserveAspectRatio="xMidYMid meet" />
+  ${header}
+  <text class="intro" x="40" y="222">Hi, I’m ${safeName}. I explore cybersecurity, automation, and open source.</text>
 
-  <text class="section" x="40" y="236">A LITTLE ABOUT ME</text>
-  <circle cx="44" cy="263" r="2.5" fill="#8b7bff" />
-  <text class="about" x="56" y="267">Interested in security research, penetration testing, and secure coding</text>
-  <circle cx="44" cy="288" r="2.5" fill="#8b7bff" />
-  <text class="about" x="56" y="292">I enjoy turning repetitive work into useful automation</text>
-  <circle cx="44" cy="313" r="2.5" fill="#8b7bff" />
-  <text class="about" x="56" y="317">Exploring AI assistants and agents, machine learning operations, and infrastructure</text>
-  <circle cx="44" cy="338" r="2.5" fill="#8b7bff" />
-  <text class="about" x="56" y="342">Always happy to learn from and contribute to the open-source community</text>
+  <text class="section" x="40" y="256">A LITTLE ABOUT ME</text>
+  <circle cx="44" cy="283" r="2.5" fill="#8b7bff" />
+  <text class="about" x="56" y="287">Interested in security research, penetration testing, and secure coding</text>
+  <circle cx="44" cy="308" r="2.5" fill="#8b7bff" />
+  <text class="about" x="56" y="312">I enjoy turning repetitive work into useful automation</text>
+  <circle cx="44" cy="333" r="2.5" fill="#8b7bff" />
+  <text class="about" x="56" y="337">Exploring AI assistants and agents, machine learning operations, and infrastructure</text>
+  <circle cx="44" cy="358" r="2.5" fill="#8b7bff" />
+  <text class="about" x="56" y="362">Always happy to learn from and contribute to the open-source community</text>
 
-  <text class="section" x="40" y="374">GITHUB SNAPSHOT</text>
+  <text class="section" x="40" y="394">GITHUB SNAPSHOT</text>
   ${statCards}
-  <text class="section" x="40" y="518">PUBLIC REPOSITORIES BY SECTION</text>
-  <rect x="40" y="522" width="680" height="24" rx="4" fill="#202b42" />
-  <text class="table-header" x="54" y="538">SECTION</text>
-  <text class="table-header" x="226" y="538">REPOSITORIES</text>
-  <line x1="212" y1="522" x2="212" y2="${rowY}" class="table-rule" />
-  ${tableRows || '<text class="repository muted" x="54" y="570">No public repositories listed.</text>'}
+  <text class="section" x="40" y="538">PUBLIC REPOSITORIES BY SECTION</text>
+  <rect x="40" y="542" width="680" height="24" rx="4" fill="#202b42" />
+  <text class="table-header" x="54" y="558">SECTION</text>
+  <text class="table-header" x="226" y="558">REPOSITORIES</text>
+  <line x1="212" y1="542" x2="212" y2="${rowY}" class="table-rule" />
+  ${tableRows || '<text class="repository muted" x="54" y="590">No public repositories listed.</text>'}
   <a href="https://github.com/${escapeXml(safeUsername)}" aria-label="Explore Steven’s GitHub profile">
     <text class="link" x="40" y="${footerY}">GITHUB.COM/${escapeXml(safeUsername.toUpperCase())}</text>
   </a>
@@ -116,6 +128,7 @@ function profileSvg({ name, username, public_repos, followers, totalStars, secti
   <style>
     text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     .section { fill: #9ca9c4; font-size: 10px; font-weight: 700; letter-spacing: 1.3px; }
+    .intro { fill: #cbd4e8; font-size: 13px; font-weight: 600; }
     .about { fill: #eef1fa; font-size: 12px; }
     .label { fill: #9ca9c4; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
     .value { fill: #f3f5ff; font-size: 23px; font-weight: 700; }
@@ -135,9 +148,12 @@ function profileSvg({ name, username, public_repos, followers, totalStars, secti
 export default async function run() {
   const statsFile = process.env.STATS_FILE || 'stats.json';
   const outputPath = process.env.INPUT_OUTPUT_PATH || 'assets/metrics.svg';
-  const raw = await readFile(path.resolve(process.cwd(), statsFile), 'utf8');
+  const [raw, headerSvg] = await Promise.all([
+    readFile(path.resolve(process.cwd(), statsFile), 'utf8'),
+    readFile(path.resolve(process.cwd(), 'assets/profile-header.svg'), 'utf8'),
+  ]);
   const stats = JSON.parse(raw);
-  const svg = profileSvg(stats);
+  const svg = profileSvg({ ...stats, headerSvg });
   const fullPath = path.resolve(process.cwd(), outputPath);
   await mkdir(path.dirname(fullPath), { recursive: true });
   await writeFile(fullPath, svg, 'utf8');
