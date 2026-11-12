@@ -91,15 +91,6 @@ function profileSvg({ name, username, public_repos, followers, totalStars, secti
   <rect x="0.5" y="0.5" width="759" height="${height - 1}" rx="22" fill="url(#background)" stroke="#29334a" />
   <image href="${escapeXml(headerUrl)}" x="40" y="30" width="680" height="170" preserveAspectRatio="xMidYMid meet" />
 
-  <rect x="0.5" y="0.5" width="759" height="619" rx="22" fill="url(#background)" stroke="#29334a" />
-  <circle cx="704" cy="44" r="80" fill="#8b7bff" fill-opacity=".08" />
-  <rect x="36" y="35" width="84" height="84" rx="42" fill="#1a2440" stroke="url(#accent)" stroke-width="2" />
-  <image href="${safeAvatar}" x="40" y="38" width="76" height="76" clip-path="url(#avatar-clip)" />
-  <text class="name" x="140" y="67">${safeName}</text>
-  <text class="subtitle" x="140" y="92">CYBERSECURITY · AUTOMATION · OPEN SOURCE</text>
-  <text class="intro" x="140" y="119">Curious about how things work—and how to make them safer, smarter, and more useful.</text>
-  <rect x="140" y="133" width="70" height="3" rx="1.5" fill="url(#accent)" />
-  
   <text class="section" x="40" y="236">A LITTLE ABOUT ME</text>
   <circle cx="44" cy="263" r="2.5" fill="#8b7bff" />
   <text class="about" x="56" y="267">Interested in security research, penetration testing, and secure coding</text>
