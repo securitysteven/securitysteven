@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="620" viewBox="0 0 760 620" fill="none" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="630" viewBox="0 0 760 630" fill="none" role="img" aria-labelledby="title description">
   <title id="title">Steven — cybersecurity, automation, and open source</title>
-  <desc id="description">Profile introduction, interests, and live GitHub statistics for Steven.</desc>
+  <desc id="description">Profile introduction, interests, GitHub statistics, and a table of public repositories grouped by section for Steven.</desc>
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="760" y2="620" gradientUnits="userSpaceOnUse">
+    <linearGradient id="background" x1="0" y1="0" x2="760" y2="630" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0c1222" />
       <stop offset="1" stop-color="#10172a" />
     </linearGradient>
@@ -12,7 +12,7 @@
     </linearGradient>
     <clipPath id="avatar-clip"><circle cx="78" cy="76" r="38" /></clipPath>
   </defs>
-  <rect x="0.5" y="0.5" width="759" height="619" rx="22" fill="url(#background)" stroke="#29334a" />
+  <rect x="0.5" y="0.5" width="759" height="629" rx="22" fill="url(#background)" stroke="#29334a" />
   <circle cx="704" cy="44" r="80" fill="#8b7bff" fill-opacity=".08" />
   <rect x="36" y="35" width="84" height="84" rx="42" fill="#1a2440" stroke="url(#accent)" stroke-width="2" />
   <image href="https://avatars.githubusercontent.com/u/24697316?v=4" x="40" y="38" width="76" height="76" clip-path="url(#avatar-clip)" />
@@ -36,7 +36,7 @@
       <g transform="translate(36 345)">
         <rect width="216" height="72" rx="14" fill="#111a2e" stroke="#26324b" />
         <text class="label" x="16" y="28">PUBLIC REPOSITORIES</text>
-        <text class="value" x="16" y="57">51</text>
+        <text class="value" x="16" y="57">44</text>
       </g>
       <g transform="translate(267 345)">
         <rect width="216" height="72" rx="14" fill="#111a2e" stroke="#26324b" />
@@ -48,27 +48,55 @@
         <text class="label" x="16" y="28">TOTAL STARS</text>
         <text class="value" x="16" y="57">3</text>
       </g>
-  <text class="section" x="40" y="466">TOP REPOSITORIES</text>
+
+  <text class="section" x="40" y="466">PUBLIC REPOSITORIES BY SECTION</text>
+  <rect x="40" y="474" width="680" height="16" rx="4" fill="#202b42" />
+  <text class="table-header" x="54" y="486">SECTION</text>
+  <text class="table-header" x="226" y="486">REPOSITORIES</text>
+  <line x1="212" y1="474" x2="212" y2="594" class="table-rule" />
   
-      <g transform="translate(40 486)">
-        <circle cx="4" cy="-4" r="3" fill="#8b7bff" />
-        <text class="repo" x="18" y="0">pentesting</text>
-        <text class="stars" x="680" y="0" text-anchor="end">★ 2</text>
+      <g>
+        <rect x="40" y="490" width="680" height="70" fill="#111a2e" />
+        <line x1="40" y1="560" x2="720" y2="560" class="table-rule" />
+        <text class="category" x="54" y="511">About me &amp; writing</text>
+        <text class="repository" x="226" y="511" style="font-size: 10px;">securitysteven, resume, presentations, blog, music</text>
       </g>
-      <g transform="translate(40 511)">
-        <circle cx="4" cy="-4" r="3" fill="#8b7bff" />
-        <text class="repo" x="18" y="0">hugo-blog</text>
-        <text class="stars" x="680" y="0" text-anchor="end">★ 1</text>
+      <g>
+        <rect x="40" y="490" width="680" height="42" fill="#0e1729" />
+        <line x1="40" y1="532" x2="720" y2="532" class="table-rule" />
+        <text class="category" x="54" y="511">Apps, data &amp; AI</text>
+        <text class="repository" x="226" y="511" style="font-size: 10px;">nutrition-deficiency-detector, statistics-web, elevator</text>
       </g>
-      <g transform="translate(40 536)">
-        <circle cx="4" cy="-4" r="3" fill="#8b7bff" />
-        <text class="repo" x="18" y="0">aranock</text>
-        <text class="stars" x="680" y="0" text-anchor="end">★ 0</text>
+      <g>
+        <rect x="40" y="490" width="680" height="74" fill="#111a2e" />
+        <line x1="40" y1="564" x2="720" y2="564" class="table-rule" />
+        <text class="category" x="54" y="511">Security &amp; privacy</text>
+        <text class="repository" x="226" y="511" style="font-size: 10px;">pentesting, htb-discord-bot, wargames, OWAPP-top-10, homebrew-sec-tools, macbook-machine-learning-setup, hugo-blog, odysee_addblock_brave_extension</text>
       </g>
+      <g>
+        <rect x="40" y="490" width="680" height="74" fill="#0e1729" />
+        <line x1="40" y1="564" x2="720" y2="564" class="table-rule" />
+        <text class="category" x="54" y="511">Learning &amp; tutorial projects</text>
+        <text class="repository" x="226" y="511" style="font-size: 10px;">ruby, exercism, go, python, cpp, rustlings, learning-go-with-tests, gRPC, django.nv, kaggle, simple_blockchain, aws_lambda, full-stack-demo, stickersmash</text>
+      </g>
+      <g>
+        <rect x="40" y="490" width="680" height="74" fill="#111a2e" />
+        <line x1="40" y1="564" x2="720" y2="564" class="table-rule" />
+        <text class="category" x="54" y="511">Games &amp; experiments</text>
+        <text class="repository" x="226" y="511" style="font-size: 10px;">botword_adventure_tierlist, mmo-bot, farmrpg, IW_bot, splishsplash, unreal-engine, unity-junior-programmer-path, baskbetball-game, aranock, aranock_online_wine, risky</text>
+      </g>
+      <g>
+        <rect x="40" y="490" width="680" height="42" fill="#0e1729" />
+        <line x1="40" y1="532" x2="720" y2="532" class="table-rule" />
+        <text class="category" x="54" y="511">Web, utility &amp; civic projects</text>
+        <text class="repository" x="226" y="511" style="font-size: 10px;">newsreader, youtube_downloader</text>
+      </g>
+
   <a href="https://github.com/securitysteven" aria-label="Explore Steven’s GitHub profile">
-    <text class="link" x="40" y="584">GITHUB.COM/SECURITYSTEVEN</text>
+    <text class="link" x="40" y="602">GITHUB.COM/SECURITYSTEVEN</text>
   </a>
-  <text class="footer" x="720" y="584" text-anchor="end">METRICS REFRESH DAILY</text>
+  <text class="footer" x="720" y="602" text-anchor="end">METRICS REFRESH DAILY</text>
+
   <style>
     text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     .name { fill: #f3f5ff; font-size: 25px; font-weight: 700; }
@@ -78,9 +106,11 @@
     .about { fill: #eef1fa; font-size: 12px; }
     .label { fill: #9ca9c4; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
     .value { fill: #f3f5ff; font-size: 23px; font-weight: 700; }
-    .repo { fill: #eef1fa; font-size: 12px; font-weight: 600; }
-    .stars, .empty, .footer, .link { fill: #8996b0; font-size: 11px; }
-    .link, .footer { font-size: 9px; letter-spacing: 1px; }
+    .table-header { fill: #b7c3dc; font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+    .category { fill: #eef1fa; font-size: 10px; font-weight: 600; }
+    .repository { fill: #cbd4e8; font-size: 10px; font-weight: 500; }
+    .table-rule { stroke: #26324b; stroke-width: 1; }
+    .footer, .link { fill: #8996b0; font-size: 9px; letter-spacing: 1px; }
     .link { fill: #9ca9c4; }
   </style>
 </svg>
