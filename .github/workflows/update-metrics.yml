@@ -24,14 +24,9 @@ jobs:
             const fs = require('fs');
             const username = '${{ github.repository_owner }}';
             const { data: user } = await github.rest.users.getByUsername({ username });
-
-            const { data: repos } = await github.rest.repos.listForUser({
-              username,
-              per_page: 100
-            });
-
-            const publicRepos = repos.filter(repo => !repo.private && !repo.fork);
-
+            const { data: repos } = await github.rest.repos.listForUser({ username, per_page: 100 });
+            const publicRepos = repos.filter(repo => !repo.private);
+            const publicRepoMap = new Map(publicRepos.map(repo => [repo.name, repo]));
             const totalStars = publicRepos.reduce((sum, repo) => sum + (repo.stargazers_count || 0), 0);
 
             const readme = fs.readFileSync('README.md', 'utf8');
@@ -52,22 +47,20 @@ jobs:
               if (!match) continue;
 
               const url = new URL(match[1]);
-              const pathSegments = url.pathname.split('/').filter(Boolean);
-              const [owner, repoName] = pathSegments;
+              const [owner, repoName] = url.pathname.split('/').filter(Boolean);
+              const repo = publicRepoMap.get(repoName);
 
-              if (
-                owner &&
-                repoName &&
-                owner.toLowerCase() === username.toLowerCase() &&
-                publicRepos.some(repo => repo.name === repoName)
-              ) {
-                currentSection.repositories.push({ name: repoName });
+              if (owner?.toLowerCase() === username.toLowerCase() && repo) {
+                currentSection.repositories.push({
+                  name: repo.name,
+                  url: repo.html_url
+                });
               }
             }
 
             const stats = {
               name: user.name || user.login,
-              avatar: user.avatar_url,
+              username: user.login,
               public_repos: publicRepos.length,
               followers: user.followers,
               totalStars,
