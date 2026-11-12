@@ -101,7 +101,6 @@ function profileSvg({ name, username, public_repos, followers, totalStars, secti
   </defs>
   <rect x="0.5" y="0.5" width="759" height="${height - 1}" rx="22" fill="url(#background)" stroke="#29334a" />
   ${header}
-  <text class="intro" x="40" y="222">Hi, I’m ${safeName}. I explore cybersecurity, automation, and open source.</text>
 
   <text class="section" x="40" y="256">A LITTLE ABOUT ME</text>
   <circle cx="44" cy="283" r="2.5" fill="#8b7bff" />
