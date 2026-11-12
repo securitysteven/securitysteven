@@ -1,107 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="630" viewBox="0 0 760 630" fill="none" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="873" viewBox="0 0 760 873" fill="none" role="img" aria-labelledby="title description">
   <title id="title">Steven — cybersecurity, automation, and open source</title>
-  <desc id="description">Profile introduction, interests, GitHub statistics, and a table of public repositories grouped by section for Steven.</desc>
+  <desc id="description">Profile header, interests, GitHub statistics, and a table of public repositories grouped by section for Steven.</desc>
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="760" y2="630" gradientUnits="userSpaceOnUse">
+    <linearGradient id="background" x1="0" y1="0" x2="760" y2="873" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0c1222" />
       <stop offset="1" stop-color="#10172a" />
     </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#8b7bff" />
-      <stop offset="1" stop-color="#43d9c5" />
-    </linearGradient>
-    <clipPath id="avatar-clip"><circle cx="78" cy="76" r="38" /></clipPath>
   </defs>
-  <rect x="0.5" y="0.5" width="759" height="629" rx="22" fill="url(#background)" stroke="#29334a" />
-  <circle cx="704" cy="44" r="80" fill="#8b7bff" fill-opacity=".08" />
-  <rect x="36" y="35" width="84" height="84" rx="42" fill="#1a2440" stroke="url(#accent)" stroke-width="2" />
-  <image href="https://avatars.githubusercontent.com/u/24697316?v=4" x="40" y="38" width="76" height="76" clip-path="url(#avatar-clip)" />
-  <text class="name" x="140" y="67">Steven</text>
-  <text class="subtitle" x="140" y="92">CYBERSECURITY · AUTOMATION · OPEN SOURCE</text>
-  <text class="intro" x="140" y="119">Curious about how things work—and how to make them safer, smarter, and more useful.</text>
-  <rect x="140" y="133" width="70" height="3" rx="1.5" fill="url(#accent)" />
+  <rect x="0.5" y="0.5" width="759" height="872" rx="22" fill="url(#background)" stroke="#29334a" />
+  <image href="https://raw.githubusercontent.com/securitysteven/securitysteven/main/assets/profile-header.svg" x="40" y="30" width="680" height="170" preserveAspectRatio="xMidYMid meet" />
 
-  <text class="section" x="40" y="184">A LITTLE ABOUT ME</text>
-  <circle cx="44" cy="211" r="2.5" fill="#8b7bff" />
-  <text class="about" x="56" y="215">Interested in security research, penetration testing, and secure coding</text>
-  <circle cx="44" cy="236" r="2.5" fill="#8b7bff" />
-  <text class="about" x="56" y="240">I enjoy turning repetitive work into useful automation</text>
-  <circle cx="44" cy="261" r="2.5" fill="#8b7bff" />
-  <text class="about" x="56" y="265">Exploring AI assistants and agents, machine learning operations, and infrastructure</text>
-  <circle cx="44" cy="286" r="2.5" fill="#8b7bff" />
-  <text class="about" x="56" y="290">Always happy to learn from and contribute to the open-source community</text>
+  <text class="section" x="40" y="236">A LITTLE ABOUT ME</text>
+  <circle cx="44" cy="263" r="2.5" fill="#8b7bff" />
+  <text class="about" x="56" y="267">Interested in security research, penetration testing, and secure coding</text>
+  <circle cx="44" cy="288" r="2.5" fill="#8b7bff" />
+  <text class="about" x="56" y="292">I enjoy turning repetitive work into useful automation</text>
+  <circle cx="44" cy="313" r="2.5" fill="#8b7bff" />
+  <text class="about" x="56" y="317">Exploring AI assistants and agents, machine learning operations, and infrastructure</text>
+  <circle cx="44" cy="338" r="2.5" fill="#8b7bff" />
+  <text class="about" x="56" y="342">Always happy to learn from and contribute to the open-source community</text>
 
-  <text class="section" x="40" y="326">GITHUB SNAPSHOT</text>
+  <text class="section" x="40" y="374">GITHUB SNAPSHOT</text>
   
-      <g transform="translate(36 345)">
+      <g transform="translate(36 393)">
         <rect width="216" height="72" rx="14" fill="#111a2e" stroke="#26324b" />
         <text class="label" x="16" y="28">PUBLIC REPOSITORIES</text>
-        <text class="value" x="16" y="57">44</text>
+        <text class="value" x="16" y="57">51</text>
       </g>
-      <g transform="translate(267 345)">
+      <g transform="translate(267 393)">
         <rect width="216" height="72" rx="14" fill="#111a2e" stroke="#26324b" />
         <text class="label" x="16" y="28">FOLLOWERS</text>
         <text class="value" x="16" y="57">10</text>
       </g>
-      <g transform="translate(498 345)">
+      <g transform="translate(498 393)">
         <rect width="216" height="72" rx="14" fill="#111a2e" stroke="#26324b" />
         <text class="label" x="16" y="28">TOTAL STARS</text>
         <text class="value" x="16" y="57">3</text>
       </g>
-
-  <text class="section" x="40" y="466">PUBLIC REPOSITORIES BY SECTION</text>
-  <rect x="40" y="474" width="680" height="16" rx="4" fill="#202b42" />
-  <text class="table-header" x="54" y="486">SECTION</text>
-  <text class="table-header" x="226" y="486">REPOSITORIES</text>
-  <line x1="212" y1="474" x2="212" y2="594" class="table-rule" />
+  <text class="section" x="40" y="518">PUBLIC REPOSITORIES BY SECTION</text>
+  <rect x="40" y="522" width="680" height="24" rx="4" fill="#202b42" />
+  <text class="table-header" x="54" y="538">SECTION</text>
+  <text class="table-header" x="226" y="538">REPOSITORIES</text>
+  <line x1="212" y1="522" x2="212" y2="801" class="table-rule" />
   
       <g>
-        <rect x="40" y="490" width="680" height="70" fill="#111a2e" />
-        <line x1="40" y1="560" x2="720" y2="560" class="table-rule" />
-        <text class="category" x="54" y="511">About me &amp; writing</text>
-        <text class="repository" x="226" y="511" style="font-size: 10px;">securitysteven, resume, presentations, blog, music</text>
+        <rect x="40" y="546" width="680" height="36" fill="#111a2e" />
+        <text class="category" x="54" y="567">About me &amp; writing</text>
+        <text class="repository" x="226" y="565"><a href="https://github.com/securitysteven/securitysteven">securitysteven</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/resume">resume</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/presentations">presentations</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/blog">blog</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/music">music</a></text>
+        <line x1="40" y1="582" x2="720" y2="582" class="table-rule" />
       </g>
       <g>
-        <rect x="40" y="490" width="680" height="42" fill="#0e1729" />
-        <line x1="40" y1="532" x2="720" y2="532" class="table-rule" />
-        <text class="category" x="54" y="511">Apps, data &amp; AI</text>
-        <text class="repository" x="226" y="511" style="font-size: 10px;">nutrition-deficiency-detector, statistics-web, elevator</text>
+        <rect x="40" y="582" width="680" height="36" fill="#0e1729" />
+        <text class="category" x="54" y="603">Apps, data &amp; AI</text>
+        <text class="repository" x="226" y="601"><a href="https://github.com/securitysteven/Personal_AI_Infrastructure">Personal_AI_Infrastructure</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/nutrition-deficiency-detector">nutrition-deficiency-detector</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/statistics-web">statistics-web</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/elevator">elevator</a></text>
+        <line x1="40" y1="618" x2="720" y2="618" class="table-rule" />
       </g>
       <g>
-        <rect x="40" y="490" width="680" height="74" fill="#111a2e" />
-        <line x1="40" y1="564" x2="720" y2="564" class="table-rule" />
-        <text class="category" x="54" y="511">Security &amp; privacy</text>
-        <text class="repository" x="226" y="511" style="font-size: 10px;">pentesting, htb-discord-bot, wargames, OWAPP-top-10, homebrew-sec-tools, macbook-machine-learning-setup, hugo-blog, odysee_addblock_brave_extension</text>
+        <rect x="40" y="618" width="680" height="59" fill="#111a2e" />
+        <text class="category" x="54" y="639">Security &amp; privacy</text>
+        <text class="repository" x="226" y="637"><a href="https://github.com/securitysteven/AILabs">AILabs</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/pentesting">pentesting</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/htb-discord-bot">htb-discord-bot</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/wargames">wargames</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/OWAPP-top-10">OWAPP-top-10</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/homebrew-sec-tools">homebrew-sec-tools</a></text>
+<text class="repository" x="226" y="652"><a href="https://github.com/securitysteven/hblock">hblock</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/blackhat-go">blackhat-go</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/macbook-machine-learning-setup">macbook-machine-learning-setup</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/hugo-blog">hugo-blog</a></text>
+<text class="repository" x="226" y="667"><a href="https://github.com/securitysteven/odysee_addblock_brave_extension">odysee_addblock_brave_extension</a></text>
+        <line x1="40" y1="677" x2="720" y2="677" class="table-rule" />
       </g>
       <g>
-        <rect x="40" y="490" width="680" height="74" fill="#0e1729" />
-        <line x1="40" y1="564" x2="720" y2="564" class="table-rule" />
-        <text class="category" x="54" y="511">Learning &amp; tutorial projects</text>
-        <text class="repository" x="226" y="511" style="font-size: 10px;">ruby, exercism, go, python, cpp, rustlings, learning-go-with-tests, gRPC, django.nv, kaggle, simple_blockchain, aws_lambda, full-stack-demo, stickersmash</text>
+        <rect x="40" y="677" width="680" height="44" fill="#0e1729" />
+        <text class="category" x="54" y="698">Learning &amp; tutorial projects</text>
+        <text class="repository" x="226" y="696"><a href="https://github.com/securitysteven/ruby">ruby</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/exercism">exercism</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/go">go</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/python">python</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/cpp">cpp</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/rustlings">rustlings</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/learning-go-with-tests">learning-go-with-tests</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/gRPC">gRPC</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/django.nv">django.nv</a></text>
+<text class="repository" x="226" y="711"><a href="https://github.com/securitysteven/kaggle">kaggle</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/simple_blockchain">simple_blockchain</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/aws_lambda">aws_lambda</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/full-stack-demo">full-stack-demo</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/stickersmash">stickersmash</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/pipelines-go">pipelines-go</a></text>
+        <line x1="40" y1="721" x2="720" y2="721" class="table-rule" />
       </g>
       <g>
-        <rect x="40" y="490" width="680" height="74" fill="#111a2e" />
-        <line x1="40" y1="564" x2="720" y2="564" class="table-rule" />
-        <text class="category" x="54" y="511">Games &amp; experiments</text>
-        <text class="repository" x="226" y="511" style="font-size: 10px;">botword_adventure_tierlist, mmo-bot, farmrpg, IW_bot, splishsplash, unreal-engine, unity-junior-programmer-path, baskbetball-game, aranock, aranock_online_wine, risky</text>
+        <rect x="40" y="721" width="680" height="44" fill="#111a2e" />
+        <text class="category" x="54" y="742">Games &amp; experiments</text>
+        <text class="repository" x="226" y="740"><a href="https://github.com/securitysteven/botword_adventure_tierlist">botword_adventure_tierlist</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/mmo-bot">mmo-bot</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/farmrpg">farmrpg</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/IW_bot">IW_bot</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/splishsplash">splishsplash</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/unreal-engine">unreal-engine</a></text>
+<text class="repository" x="226" y="755"><a href="https://github.com/securitysteven/unity-junior-programmer-path">unity-junior-programmer-path</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/baskbetball-game">baskbetball-game</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/aranock">aranock</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/aranock_online_wine">aranock_online_wine</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/risky">risky</a></text>
+        <line x1="40" y1="765" x2="720" y2="765" class="table-rule" />
       </g>
       <g>
-        <rect x="40" y="490" width="680" height="42" fill="#0e1729" />
-        <line x1="40" y1="532" x2="720" y2="532" class="table-rule" />
-        <text class="category" x="54" y="511">Web, utility &amp; civic projects</text>
-        <text class="repository" x="226" y="511" style="font-size: 10px;">newsreader, youtube_downloader</text>
+        <rect x="40" y="765" width="680" height="36" fill="#0e1729" />
+        <text class="category" x="54" y="786">Web, utility &amp; civic projects</text>
+        <text class="repository" x="226" y="784"><a href="https://github.com/securitysteven/newsreader">newsreader</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/youtube_downloader">youtube_downloader</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/isburningmanstillwhite">isburningmanstillwhite</a><tspan class="separator">, </tspan><a href="https://github.com/securitysteven/plumbing-web">plumbing-web</a></text>
+        <line x1="40" y1="801" x2="720" y2="801" class="table-rule" />
       </g>
-
   <a href="https://github.com/securitysteven" aria-label="Explore Steven’s GitHub profile">
-    <text class="link" x="40" y="602">GITHUB.COM/SECURITYSTEVEN</text>
+    <text class="link" x="40" y="837">GITHUB.COM/SECURITYSTEVEN</text>
   </a>
-  <text class="footer" x="720" y="602" text-anchor="end">METRICS REFRESH DAILY</text>
-
+  <text class="footer" x="720" y="837" text-anchor="end">METRICS REFRESH DAILY</text>
   <style>
     text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    .name { fill: #f3f5ff; font-size: 25px; font-weight: 700; }
-    .subtitle { fill: #9ca9c4; font-size: 11px; font-weight: 600; letter-spacing: 1.15px; }
-    .intro { fill: #cbd4e8; font-size: 12px; }
     .section { fill: #9ca9c4; font-size: 10px; font-weight: 700; letter-spacing: 1.3px; }
     .about { fill: #eef1fa; font-size: 12px; }
     .label { fill: #9ca9c4; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
@@ -109,6 +96,9 @@
     .table-header { fill: #b7c3dc; font-size: 9px; font-weight: 700; letter-spacing: 1px; }
     .category { fill: #eef1fa; font-size: 10px; font-weight: 600; }
     .repository { fill: #cbd4e8; font-size: 10px; font-weight: 500; }
+    .repository a { fill: #cbd4e8; text-decoration: underline; }
+    .separator { fill: #71809c; }
+    .muted { fill: #8996b0; }
     .table-rule { stroke: #26324b; stroke-width: 1; }
     .footer, .link { fill: #8996b0; font-size: 9px; letter-spacing: 1px; }
     .link { fill: #9ca9c4; }
