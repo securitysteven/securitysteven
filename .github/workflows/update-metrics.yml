@@ -21,24 +21,59 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const fs = require('fs');
             const username = '${{ github.repository_owner }}';
             const { data: user } = await github.rest.users.getByUsername({ username });
-            const { data: repos } = await github.rest.repos.listForUser({ username, per_page: 100 });
-            const totalStars = repos.reduce((s, r) => s + r.stargazers_count, 0);
-            const topRepos = repos
-              .filter(r => !r.fork)
-              .sort((a, b) => b.stargazers_count - a.stargazers_count)
-              .slice(0, 3)
-              .map(r => ({ name: r.name, stars: r.stargazers_count }));
+
+            const { data: repos } = await github.rest.repos.listForUser({
+              username,
+              per_page: 100
+            });
+
+            const publicRepos = repos.filter(repo => !repo.private && !repo.fork);
+
+            const totalStars = publicRepos.reduce((sum, repo) => sum + (repo.stargazers_count || 0), 0);
+
+            const readme = fs.readFileSync('README.md', 'utf8');
+            const sections = [];
+            let currentSection = null;
+
+            for (const line of readme.split(/\r?\n/)) {
+              const heading = line.match(/^##\s+(.+)$/);
+              if (heading) {
+                currentSection = { name: heading[1].trim(), repositories: [] };
+                sections.push(currentSection);
+                continue;
+              }
+
+              if (!currentSection) continue;
+
+              const match = line.match(/\[[^\]]+\]\((https:\/\/github\.com\/[^)]+)\)/);
+              if (!match) continue;
+
+              const url = new URL(match[1]);
+              const pathSegments = url.pathname.split('/').filter(Boolean);
+              const [owner, repoName] = pathSegments;
+
+              if (
+                owner &&
+                repoName &&
+                owner.toLowerCase() === username.toLowerCase() &&
+                publicRepos.some(repo => repo.name === repoName)
+              ) {
+                currentSection.repositories.push({ name: repoName });
+              }
+            }
+
             const stats = {
               name: user.name || user.login,
               avatar: user.avatar_url,
-              public_repos: user.public_repos,
+              public_repos: publicRepos.length,
               followers: user.followers,
               totalStars,
-              topRepos
+              sections: sections.filter(section => section.repositories.length > 0)
             };
-            const fs = require('fs');
+
             fs.writeFileSync('stats.json', JSON.stringify(stats), 'utf8');
 
       - name: Setup Node
